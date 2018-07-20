@@ -1,0 +1,38 @@
+﻿@model System.Data.DataTable;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Employee Dashboard</h3>
+<hr />
+<a class="btn btn-primary" href="@Url.Action("Create","Employee")">Add New Employee</a> &nbsp;
+<a class="btn btn-primary" href="@Url.Action("Index","CustomFile")">Upload file</a>
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>Employee First Name</th>
+        <th>Employee Last Name</th>
+        <th>Employee Email Id</th>
+        <th>Employee Contact No</th>
+        <th></th>
+    </tr>
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+        <tr>
+            <td>@Model.Rows[i][1]</td>
+            <td>@Model.Rows[i][2]</td>
+            <td>@Model.Rows[i][3]</td>
+            <td>@Model.Rows[i][4]</td>
+            <td>
+                <!-- <a href="@Url.Action("Edit", "Employee", new { @id = @Model.Rows[i][0] })">Edit</a> &nbsp;
+                     <a href="@Url.Action("Delete", "Employee", new { @id = @Model.Rows[i][0] })">Delete</a>
+                -->
+                <a class="btn btn-default" asp-action="edit" asp-route-id="@Model.Rows[i][0]">Edit</a>&nbsp;&nbsp;
+                <a class="btn btn-danger" asp-action="delete" asp-route-id="@Model.Rows[i][0]" onclick="return confirm('Are You Sure to Delete..?');">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+

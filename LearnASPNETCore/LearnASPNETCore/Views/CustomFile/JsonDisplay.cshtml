@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewData["Title"] = "JsonDisplay";
+}
+<html>
+<head>
+    <style>
+        .hidecolumn {
+            visibility: hidden !important;
+        }
+        .viewcolumn {
+            visibility: visible !important;
+        }
+        .tablecolumn
+         {
+            visibility:hidden;
+        }
+    </style>
+</head>
+<body>
+    <h2>JSON file data</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <select name="jsonheader" onchange="getfileheader(this.value);">
+                <option value="">------</option>
+                <option value="all">All Employee Fields</option>
+                <option value="EmpFname">Employee First Name</option>
+                <option value="EmpLname">Employee Last Name</option>
+                <option value="EmpEmail">Employee Email</option>
+                <option value="EmpContactno">Employee Contact no</option>
+            </select>
+        </div>
+    </div>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="tablecolumn ">Employee Id</th>
+                <th class="tablecolumn empfname">Employee First Name</th>
+                <th class="tablecolumn emplname">Employee Last Name</th>
+                <th class="tablecolumn empemail">Employee Email-class</th>
+                <th class="tablecolumn empmob">Employee Contact No</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td class="tablecolumn "> @emp.Empid </td>
+                    <td class="tablecolumn empfname"> @emp.EmpFname</td>
+                    <td class="tablecolumn emplname"> @emp.EmpLname</td>
+                    <td class="tablecolumn empemail"> @emp.EmpEmail</td>
+                    <td class="tablecolumn empmob"> @emp.EmpContactno</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function getfileheader(fileheader)
+    {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var filename = url.searchParams.get("filename");
+        if (fileheader == "all") {
+            $(".tablecolumn").addClass("viewcolumn");
+        }
+        if (fileheader == "EmpFname") {
+            $(".tablecolumn").removeClass("viewcolumn");
+            $(".empfname").addClass("viewcolumn");
+        }
+       if (fileheader == "EmpLname") {
+           $(".tablecolumn").removeClass("viewcolumn");
+           $(".emplname").addClass("viewcolumn");
+        }
+         if (fileheader == "EmpEmail") {
+             $(".tablecolumn").removeClass("viewcolumn");
+            $(".empemail").addClass("viewcolumn");
+        }
+        if (fileheader == "EmpContactno") {
+            $(".tablecolumn").removeClass("viewcolumn");
+            $(".empmob").addClass("viewcolumn");
+        }
+    }
+</script>

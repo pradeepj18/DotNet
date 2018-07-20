@@ -1,0 +1,58 @@
+﻿@Model LearnASPNETCore.Controllers.EmployeeModel
+@{
+    ViewData["Title"] = "Display";
+}
+
+<h2>Excel file data</h2>
+
+    <select name="jsonheader" onchange="getfileheader(this.value);">
+        <option value="">------</option>
+        <option value="all">All Employee Fields</option>
+        <option value="EmpFname">Employee First Name</option>
+        <option value="EmpLname">Employee Last Name</option>
+        <option value="EmpEmail">Employee Email</option>
+        <option value="EmpContactno">Employee Contact no</option>
+    </select>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee First Name</th>
+            <th>Employee Last Name</th>
+            <th>Employee Email-Id</th>
+            <th>Employee Contact No</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in (List<EmployeeModel>)Model)
+        {
+            <tr>
+                <td> @emp.Empid </td>
+                <td> @emp.EmpFname</td>
+                <td> @emp.EmpLname</td>
+                <td> @emp.EmpEmail</td>
+                <td> @emp.EmpContactno</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+   
+    function getfileheader(filecolumns) {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var filename = url.searchParams.get("filename");
+        $.ajax({
+            method:'POST',
+            url:"Display",
+            data: ({
+                filename: filename,
+                filecolumns: filecolumns
+            })
+        }).done(function () {
+            alert('Added');
+        });
+    }
+</script>

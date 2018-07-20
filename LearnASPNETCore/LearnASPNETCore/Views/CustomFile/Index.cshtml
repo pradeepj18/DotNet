@@ -1,0 +1,25 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Upload Data from File</h2>
+<hr />
+<html>
+<body>
+    <form method="post" enctype="multipart/form-data" asp-controller="CustomFile" asp-action="Index">
+        <div class="form-group" style="display:-webkit-inline-box">
+            <div class="col-md-10">
+                <input type="file" name="file" />
+            </div>
+
+            <div class="col-md-10">
+                <input type="submit" value="Upload" />
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
+

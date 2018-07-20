@@ -1,0 +1,11 @@
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\bin\Debug\netcoreapp2.0\LearnASPNETCore.deps.json
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\bin\Debug\netcoreapp2.0\LearnASPNETCore.runtimeconfig.json
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\bin\Debug\netcoreapp2.0\LearnASPNETCore.runtimeconfig.dev.json
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\bin\Debug\netcoreapp2.0\LearnASPNETCore.dll
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\obj\Debug\netcoreapp2.0\LearnASPNETCore.csproj.CoreCompileInputs.cache
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\obj\Debug\netcoreapp2.0\LearnASPNETCore.AssemblyInfoInputs.cache
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\obj\Debug\netcoreapp2.0\LearnASPNETCore.AssemblyInfo.cs
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\bin\Debug\netcoreapp2.0\LearnASPNETCore.pdb
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\obj\Debug\netcoreapp2.0\LearnASPNETCore.dll
+c:\users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\obj\Debug\netcoreapp2.0\LearnASPNETCore.pdb
+C:\Users\pj18c\source\repos\LearnASPNETCore\LearnASPNETCore\obj\Debug\netcoreapp2.0\LearnASPNETCore.csprojAssemblyReference.cache
